@@ -29,7 +29,7 @@ import static com.android.launcher3.config.FeatureFlags.ENABLE_TASKBAR_NAVBAR_UN
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_TRANSIENT_TASKBAR_HIDE;
 import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCHER_TRANSIENT_TASKBAR_SHOW;
 import static com.android.launcher3.taskbar.TaskbarActivityContext.ENABLE_TASKBAR_BEHIND_SHADE;
-import static com.android.launcher3.taskbar.TaskbarManager.NAVIGATION_BAR_HINT;
+import static com.android.launcher3.taskbar.TaskbarManagerImpl.NAVIGATION_BAR_HINT;
 import static com.android.launcher3.util.Executors.UI_HELPER_EXECUTOR;
 import static com.android.launcher3.util.FlagDebugUtils.appendFlag;
 import static com.android.launcher3.util.FlagDebugUtils.formatFlagChange;
@@ -328,7 +328,7 @@ public class TaskbarStashController implements TaskbarControllers.LoggableTaskba
         } else {
             mUnstashedHeight = mActivity.getDeviceProfile().getTaskbarProfile().getHeight();
             mStashedHeight = SettingsCache.INSTANCE.get(mActivity).getValue(NAVIGATION_BAR_HINT, 1)
-                    ? mActivity.getDeviceProfile().getTaskbarProfile().getStashedTaskbarHeight();
+                    ? mActivity.getDeviceProfile().getTaskbarProfile().getStashedTaskbarHeight()
                     : 0;
         }
     }
