@@ -476,8 +476,6 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
                 .register(USER_SETUP_COMPLETE_URI, mOnSettingsChangeListener);
         SettingsCache.INSTANCE.get(mPrimaryWindowContext)
                 .register(NAV_BAR_KIDS_MODE, mOnSettingsChangeListener);
-        SettingsCache.INSTANCE.get(mPrimaryWindowContext)
-                .register(NAV_BAR_INVERSE, mOnSettingsChangeListener);
 
         mOnLayoutModeChangeListener = c -> {
             recreateTaskbars();
@@ -487,6 +485,9 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
                 .register(NAV_BAR_LAYOUT, mOnLayoutModeChangeListener);
         SettingsCache.INSTANCE.get(mPrimaryWindowContext)
                 .register(NAVIGATION_BAR_HINT_URI, mOnLayoutModeChangeListener);
+        SettingsCache.INSTANCE.get(mPrimaryWindowContext)
+                .register(NAV_BAR_INVERSE, mOnLayoutModeChangeListener);
+
         if (DesktopExperienceFlags.ENABLE_SYS_DECORS_CALLBACKS_VIA_WM.isTrue()
                 && DesktopExperienceFlags.ENABLE_DISPLAY_CONTENT_MODE_MANAGEMENT.isTrue()) {
             displaysWithDecorationsRepositoryCompat
