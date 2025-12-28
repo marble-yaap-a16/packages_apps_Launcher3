@@ -173,8 +173,8 @@ public class TaskbarManagerImpl implements DisplayDecorationListener {
     public static final Uri NAV_BAR_LAYOUT = Settings.System.getUriFor(
             Settings.System.NAVBAR_LAYOUT_MODE);
 
-    public static final Uri NAVIGATION_BAR_HINT_URI = LineageSettings.System.getUriFor(
-            LineageSettings.System.NAVIGATION_BAR_HINT);
+    public static final Uri NAVIGATION_BAR_HINT_URI = Settings.System.getUriFor(
+            Settings.System.NAVIGATION_BAR_HINT);
 
     public static final LooperExecutor TASKBAR_UI_THREAD =
             new LooperExecutor("TASKBAR_UI_THREAD", THREAD_PRIORITY_FOREGROUND);
